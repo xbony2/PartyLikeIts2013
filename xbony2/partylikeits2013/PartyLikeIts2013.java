@@ -1,6 +1,8 @@
 package xbony2.partylikeits2013;
 
 import xbony2.partylikeits2013.common.ClientProxy;
+import xbony2.partylikeits2013.common.PLITBlocks;
+import xbony2.partylikeits2013.common.PLITItems;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.SidedProxy;
@@ -13,13 +15,14 @@ public class PartyLikeIts2013 {
 	public static final String CLIENT_PROXY_LOCATION = "xbony2.partylikeits2013.common.ClientProxy";
 	public static final String COMMON_PROXY_LOCATION = "xbony2.partylikeits2013.common.CommonProxy";
 	
-	public static final String TEXTURES_LOCATION = "xbony2/partylikeits2013/textures.png";
+	public static final String TEXTURES_LOCATION = "xbony2/partylikeits2013/terrain.png";
 	
 	@SidedProxy(clientSide = CLIENT_PROXY_LOCATION, serverSide = COMMON_PROXY_LOCATION)
 	public static ClientProxy proxy = new ClientProxy();
 	
 	@Init
 	public void load(FMLInitializationEvent event){
-		
+		PLITItems.registerItems();
+		PLITBlocks.registerBlocks();
 	}
 }

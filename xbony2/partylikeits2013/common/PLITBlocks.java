@@ -1,6 +1,7 @@
 package xbony2.partylikeits2013.common;
 
-import xbony2.partylikeits2013.blocks.PLITOre;
+import xbony2.partylikeits2013.IDs;
+import xbony2.partylikeits2013.blocks.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
@@ -8,14 +9,11 @@ import net.minecraft.block.Block;
 public class PLITBlocks {
 	public static Block netherQuartz;
 	
-	//Available ids: 153-163 + 167-209
-	public static final int NETHER_QUARTZ_ID = 153;
-	
 	public static void registerBlocks(){
-		netherQuartz = new PLITOre();
+		netherQuartz = new PLITOre(IDs.NETHER_QUARTZ_ID, 0, IDs.NETHER_QUARTZ_NAME, PLITItems.netherQuartz);
 		
-		GameRegistry.registerBlock(netherQuartz, "Quartz Ore");
+		GameRegistry.registerBlock(netherQuartz, IDs.NETHER_QUARTZ_NAME);
 		
-		LanguageRegistry.addName(netherQuartz, "Quartz Ore");
+		LanguageRegistry.addName(netherQuartz, IDs.NETHER_QUARTZ_NAME);
 	}
 }
